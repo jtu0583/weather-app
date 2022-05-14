@@ -54,6 +54,7 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
+searchCity("New York");
 
 function searchLocation(position) {
   let apiKey = "ec474497e37187e45e9b7bbff07e3902";
