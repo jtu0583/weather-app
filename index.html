@@ -17,39 +17,41 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Type a city..."
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
+        <div class="overview">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Type a city..."
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-primary shadow-sm w-100"
+                />
+              </div>
             </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-primary shadow-sm w-100"
-              />
-            </div>
-          </div>
-        </form>
-        <h1 id="city"></h1>
-        <ul>
-          <li id="date"></li>
-          <li id="description"></li>
-        </ul>
+          </form>
+          <h1 id="city">New York</h1>
+          <ul>
+            <li id="date"></li>
+            <li id="description"></li>
+          </ul>
+        </div>
         <div class="row">
           <div class="col-6">
-            <div class="clearfix">
+            <div class="clearfix weather-temperature">
+              <img src="img/sun.png" alt="clear" class="float-left" />
               <div class="float-left">
-                <img src="img/sun.png" alt="clear" />
                 <span class="temperature" id="temperature">17</span>
-                <span class="units">°C | °F</span>
+                <span class="units">°C | <a href="#"> °F</a></span>
               </div>
             </div>
           </div>
@@ -68,6 +70,7 @@
           </div>
         </div>
       </div>
+
       <div class="weather-app-wrapper">
         <small>
           <a href="https://github.com/jtu0583/weather-app">Open-Source code</a>

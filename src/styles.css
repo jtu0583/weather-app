@@ -21,9 +21,7 @@ li {
   line-height: 19px;
   list-style: none;
 }
-img {
-  height: 75px;
-}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
@@ -34,6 +32,14 @@ img {
   margin: 30px auto;
   border-radius: 5px;
   max-width: 600px;
+}
+.overview {
+  margin-bottom: 20px;
+}
+.weather-temperature img {
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
 }
 .weather-icon {
   height: 64px;
