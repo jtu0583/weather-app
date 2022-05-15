@@ -30,7 +30,9 @@ form {
 }
 .weather-app-wrapper {
   max-width: 600px;
+  margin-top: 10px;
   margin: 30px auto;
+  padding: 0;
 }
 .weather-app {
   border: 1px solid gray;
@@ -89,9 +91,10 @@ form {
 }
 
 .weather-forecast {
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
   color: #000;
+  padding-bottom: 50px;
 }
 
 .weather-forecast-date {
