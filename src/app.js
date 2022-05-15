@@ -41,7 +41,9 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#weather-icon")
     .setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
+searchCity("New York");
 
 function searchCity(city) {
   let apiKey = "ec474497e37187e45e9b7bbff07e3902";
@@ -54,7 +56,6 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
-searchCity("New York");
 
 function searchLocation(position) {
   let apiKey = "ec474497e37187e45e9b7bbff07e3902";
@@ -72,8 +73,10 @@ function getCurrentLocation(event) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+let celsiusTemperature = null;
 
 function convertToCelsius(event) {
   event.preventDefault();
@@ -82,10 +85,17 @@ function convertToCelsius(event) {
 }
 
 let dateElement = document.querySelector("#date");
+
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
 searchCity("New York");
